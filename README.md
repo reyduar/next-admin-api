@@ -16,6 +16,7 @@ docker compose up -d
 
 2. Rename file .env.template to .env
 3. Update DATABASE_URL variable
+4. Run Seed -> GET localhost:3000/api/seed
 
 ## Prisma commands
 
