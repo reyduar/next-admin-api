@@ -8,6 +8,29 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+1. Run and build Postgres database
+
+```bash
+docker compose up -d
+```
+
+2. Rename file .env.template to .env
+3. Update DATABASE_URL variable
+
+## Prisma commands
+
+```bash
+npx prisma init
+```
+
+```bash
+npx prisma migrate dev
+```
+
+```bash
+npx prisma generate
+```
+
 First, run the development server:
 
 ```bash
