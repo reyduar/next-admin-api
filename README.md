@@ -16,7 +16,20 @@ docker compose up -d
 
 2. Rename file .env.template to .env
 3. Update DATABASE_URL variable
-4. Run Seed -> GET localhost:3000/api/seed
+4. Run npm install
+
+```bash
+npm install
+```
+
+5. Run this commands to generate DB
+
+```bash
+npx prisma migrate dev
+npx prisma generate
+```
+
+4. Run Seed Request on Postman -> GET localhost:3000/api/seed
 
 ## Prisma commands
 
