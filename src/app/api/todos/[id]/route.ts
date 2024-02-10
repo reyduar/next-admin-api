@@ -22,15 +22,15 @@ export async function GET(request: Request, args: Args) {
   return NextResponse.json(todo);
 }
 
-const postSchema = yup.object({
-  description: yup.string().required(),
+const putSchema = yup.object({
+  description: yup.string(),
   complete: yup.boolean().optional().default(false),
 });
 
 export async function PUT(request: Request, args: Args) {
   try {
     const { id } = args.params;
-    const { description, complete } = await postSchema.validate(
+    const { description, complete } = await putSchema.validate(
       await request.json()
     );
     const todo = await prisma.todo.findFirst({
