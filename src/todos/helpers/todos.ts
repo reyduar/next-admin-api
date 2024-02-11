@@ -27,8 +27,8 @@ export const updateTodo = async (
   return response;
 };
 
-export const deleteTodo = async (id: string): Promise<Todo> => {
-  const response = await fetch(`/api/todos/${id}`, {
+export const deleteTodoCompleted = async (): Promise<Todo> => {
+  const response = await fetch(`/api/todos`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
