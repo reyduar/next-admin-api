@@ -43,3 +43,19 @@ export const createTodo = async (description: string) => {
     };
   }
 };
+
+export const deleteTodo = async () => {
+  try {
+    const todo = await prisma.todo.deleteMany({
+      where: {
+        complete: true,
+      },
+    });
+    revalidatePath("/dashboard/server-todos");
+    return todo;
+  } catch (error) {
+    return {
+      message: "Error deleting todo",
+    };
+  }
+};
